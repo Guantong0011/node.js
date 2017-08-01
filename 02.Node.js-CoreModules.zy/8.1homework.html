@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    //遍历循环这个数组
+    [1,2,3,4,5].forEach(console.log);
+
+    var arr = [1,2,3,4,5];
+    for (var i=0;i<arr.length;i++)
+    {
+        console.log(arr)
+    }
+    //forEach方法中的function回调支持3个参数，
+    //第1个是遍历的数组内容；第2个是对应的数组索引，第3个是数组本身
+
+
+
+
+    //map 是映射的意思 [].map(); 基本用法跟forEach相似
+    var arr1 = [2,3,4,5,6];
+    var array = arr1.map(function (item) {
+        return item * item
+    });
+    console.log(array);
+
+
+    //filter 过滤 筛选 数组filter 后, 返回过滤后的新数组,用法跟map极为相似
+    var array1 = [3,4,5,6,7,8];
+    var filterArr = array1.filter(function (item) {
+        return item
+    });
+    console.log(filterArr);
+
+
+    //some 指某些 某些项是否符合规则
+
+    var a1 = [3 , 5 , 7 , 9];
+    var b1 = 1;
+    function higherThanb1(score) {
+        return score > b1
+    }
+
+    if (a1.some(higherThanb1))
+    {
+        alert("1");
+    }
+    else {
+        alert("2")
+    }
+
+
+    //every  返回值是布尔值 需要每一个都符合
+
+    var a1 = [3 , 5 , 7 , 9];
+    var b1 = 1;
+    function higherThanb1(score) {
+        return score > b1
+    }
+
+
+    if (a1.some(higherThanb1))
+    {
+        console.log(1);
+    }
+    else
+    {
+        console.log(2)
+    }
+
+//index of 和string.indexOf(searchString,position) 方法与之类似
+
+    //返回索引数组
+    var arr = [2,5,7,8,6]
+    console.log(arr.indexOf(5,3));
+
+
+    //兼容性
+    if (typeof Array.prototype.indexOf != "function") {
+        Array.prototype.indexOf = function (searchElement, fromIndex) {
+            var index = -1;
+            fromIndex = fromIndex * 1 || 0;
+
+            for (var k = 0, length = this.length; k < length; k++) {
+                if (k >= fromIndex && this[k] === searchElement) {
+                    index = k;
+                    break;
+                }
+            }
+            return index;
+        };
+    }
+
+    //lastlndexOf
+
+
+
+    var arr = [2, 5, 7, 3, 5];
+
+    console.log(arr.lastIndexOf(5));
+    console.log(arr.lastIndexOf(5, 3));
+    console.log(arr.lastIndexOf(4));
+
+    //reduceRight
+
+    //从数组末尾开始实现的
+    var arr = [1, 2, 3, 4];
+    var specialDiff = arr.reduceRight(function (previous, current, index) {
+        if (index == 0) {
+            return previous + current;
+        }
+        return previous - current;
+    });
+
+    console.log(specialDiff);
+
+</script>
+</body>
+</html>
