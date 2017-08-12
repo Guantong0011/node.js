@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+    <link rel="stylesheet" href="animate.css">
+    <style>
+        .Header{
+            position: fixed;
+            left: 0;
+            top:0;
+            width: 100%;
+            height: 100px;
+            background-color: white;
+            overflow: hidden;
+            z-index: 100;
+        }
+        .loge-img{
+            background-image: url("images/logo.png");
+            background-size: 100% 100%;
+            width: 175px;
+            height: 70px;
+            margin-left: 200px;
+            margin-top: 10px;
+        }
+        .abutten{
+            display: block;
+            text-align: center;
+            width: 100px;
+            height: 40px;
+            background-color: white;
+            float: right;
+            line-height: 40px;
+
+
+        }
+        .abutten1{
+            display: block;
+            text-align: center;
+            width: 100px;
+            height: 40px;
+            background-color: #F0F9FF;
+            float: right;
+            margin-right: 30px;
+            line-height: 40px;
+            color:#008BED ;
+
+        }
+        .ArrButton{
+            float: right;
+            width: 240px;
+            height: 50px;
+            margin-right: 25%;
+            margin-top: -50px;
+        }
+        .Back-img{
+            width: 100%;
+            height:600px ;
+            background-color: #008BED;
+
+
+        }
+        .phone-img img{
+
+            width: 450px;
+            height: 500px;
+            position: absolute;
+            left: 200px;
+            top:108px;
+            animation: fadeInUp 1s;
+
+        }
+        .phone-text{
+
+            width: 500px;
+            height: 400px;
+            /*border: 1px solid black;*/
+            position: absolute;
+            left: 800px ;
+            top: 150px;
+            animation: fadeInRight 2s;
+
+        }
+        .phone-text h1{
+            color: white;
+            font-size: 40px;
+            margin: 0;
+
+        }
+        .phone-text p{
+            color: #99D1F8;
+            font-size: 18px;
+            margin: 0;
+            padding: 0;
+
+        }
+        .ErWei{
+            width: 450px;
+            height: 250px;
+            /*border: 1px solid black;*/
+            margin-top: 20px;
+
+        }
+        .img1{
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+
+        .Fenlei {
+            position: absolute;
+            left: 240px;
+            top:126px;
+            width: 300px;
+            height: 200px;
+            /*border: 1px solid black;*/
+
+        }
+        .ios{
+            width: 220px;
+            height: 50px;
+            font-size: 20px;
+            background-color: white ;
+            margin-top: 20px;
+            padding-top: 5px;
+            border-radius: 5px;
+            padding-left: 5px;
+        }
+        .ios img{
+            vertical-align: middle;
+        }
+        .ios a{
+            font-size: 25px;
+            margin-left: 30px;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #39442E;
+            vertical-align: middle;
+        }
+        .andr a{
+            font-size: 25px;
+            margin-left: 10px;
+            text-align: center;
+            margin-top: 20px;
+            text-decoration: none;
+            color: #39442E;
+            vertical-align: middle;
+
+        }
+
+        .andr{
+            display: block;
+            width: 220px;
+            height: 50px;
+            font-size: 20px;
+            background-color: white;
+            margin-top: 40px;
+            padding-top: 5px;
+            border-radius: 5px;
+            padding-left: 5px;
+        }
+        .andr img{
+            vertical-align: middle;
+        }
+        .content{
+            /*height: 800px;*/
+            width: 80%;
+            margin: 0 auto;
+            /*border: 1px solid black;*/
+            position: relative;
+
+
+        }
+        .content-title{
+            width: 100%;
+            /*height: 100px;*/
+            overflow: hidden;
+            /*border: 1px solid black;*/
+            margin-top: 40px;
+        }
+        .content-title div:nth-child(1)
+        {
+            float: left;
+            width: 150px;
+            height: 50px;
+            font-size: 30px;
+            color:#404040 ;
+            margin-left: 50px;
+        }
+        .content-title div:nth-child(2)
+        {
+            float: left;
+            width: 150px;
+            height: 50px;
+            font-size: 30px;
+            margin-left: 930px;
+            color: gray;
+        }
+
+        .content-body {
+            width: 1240px;
+            margin: 0 auto;
+            /*border: 1px solid red;*/
+            margin-top: 50px;
+            overflow: hidden;
+        }
+        .pic
+        {
+            width: 300px;
+            height: 100%;
+            float: left;
+            margin: 5px 40px;
+            background-color: whitesmoke;
+
+        }
+        .pic img{
+            width: 300px;
+            height: 300px;
+
+        }
+        .pic p{
+            font-size: 18px;
+            text-align: left;
+        }
+
+        .content-foot {
+            height: 50px;
+            width: 100%;
+            background-color: #E8EEF2;
+            margin-top: 40px;
+            color: #15527B;
+            text-align: center;
+            line-height: 50px;
+            font-size: 18px;
+        }
+
+        .Foot-under {
+            width: 100%;
+            height: 200px;
+            background-color:#E5E5E5 ;
+            padding-top: 20px;
+            margin-top: 40px;
+            padding-left: 160px;
+            position: relative;
+        }
+        .Foot-under p{
+            font-size: 14px;
+            margin: 0;
+            color: gray;
+
+
+        }
+        .ERm{
+            width: 180px;
+            height: 180px;
+            background-image: url("images/qr_top2.png");
+            background-size:100% 100% ;
+            position: absolute;
+            left: 1100px;
+            top: 20px;
+        }
+        </style>
+
+</head>
+<body>
+<div id="nav"></div>
+
+
+
+<script type="text/babel">
+
+
+
+
+
+
+
+
+    class Nav extends React.Component
+    {
+        render()
+        {
+            return(
+                    <div className="Header">
+                        <div className="loge-img"></div>
+                        <div className="ArrButton">
+                            <a className="abutten">浏览内容</a>
+                            <a className="abutten1">APP 下载</a>
+                        </div>
+
+                    </div>
+
+            )
+        }
+    }
+    class Gif extends React.Component
+    {
+        render()
+        {
+            return(
+                    <div className="Back-img">
+
+                        <div className="phone-img"><img src="images/phone_sample.png" /></div>
+
+                        <div className="phone-text">
+                            <h1>每天三次 每次七分钟</h1>
+                            <p>每天三次 每次七分钟
+                                在中国，资讯类移动应用的人均阅读时长是 5 分钟，而在知乎日报，这个数字是 21。</p>
+
+                            <div className="ErWei">
+                                <img className="img1" src="images/qr_top2.png" height="170" width="170"/>
+                                <div className="Fenlei">
+                                    <div className="ios">
+
+                                        <img src="images/手机.png" height="40" width="40"/>
+                                        <a href="#">IOS 版</a>
+
+                                    </div>
+                                    <div className="andr">
+                                        <img src="images/安卓.png" height="40" width="40"/>
+                                        <a href="#">Android 版</a>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+            )
+        }
+    }
+    class NB extends React.Component
+    {
+        render()
+        {
+            var imgArr = [
+                "images/0.jpg","images/1.jpg","images/2.jpg",
+                "images/3.jpg","images/4.jpg","images/5.jpg",
+                "images/6.jpg","images/7.jpg","images/8.jpg",
+                "images/9.jpg","images/10.jpg","images/11.jpg",
+                "images/12.jpg","images/13.jpg","images/14.jpg",
+                "images/15.jpg","images/16.jpg","images/17.jpg",
+                "images/18.jpg","images/19.jpg","images/20.jpg",
+                "images/21.jpg","images/22.jpg","images/23.jpg",
+                "images/24.jpg","images/25.jpg","images/26.jpg",
+                "images/27.jpg","images/28.jpg","images/29.jpg",
+                ]
+
+            var arr_text = ['小事 · 爸爸去世之后','摇滚青年陈佩斯，奇怪吗？其实一点都不奇怪','一盘酸辣爽口又劲道的凉面，夏天恨不得每天都拌来吃',
+                '小时候去新华书店花 10 块钱买的游戏光盘，竟然是「伪正版」','环游一次世界要花多少钱？73 万，这是我们帮你算出的账',
+                '遣返「格斗孤儿」回凉山，等待他们的只有毒品、艾滋和贫穷', '这个玩钢镚儿小游戏，玩着玩着就解释了一个社会问题',
+                '国内最常见的普通楼房，原来是「社会主义审美」','别再问年轻人凭什么不加班了，加班就等于努力工作吗？',
+                '为什么各种宗教都有那么多禁忌？','大误 · 可能是最适合中国人减肥文章','彩虹有没有倒影？',
+                '多少级的地震可以撼动全球？','朋友圈一篇「癌症最强科普文」传得够广，但别全信了',
+                '终于可以回答「生吃带鱼是什么样的感受」了','《权力的游戏》中的灰鳞病现实中真的存在吗？',
+                '「在职场中交不到朋友才正常」，这话其实没错','「香港爆发史无前例大流感，超过 SARS」……等等，别慌',
+                '瞎扯 · 如何正确地吐槽,如何正确的吐槽,如何呢','这里是广告 · 将巴萨精髓注入手机设计是一种怎样的体验？',
+                '小事 · 但愿人长久，千里共饺子,但愿是这样','真奇怪，有些电影你没那么喜欢却一看再看',
+                '「儿子你看，这就是爸爸的青春、热情和梦想」',
+                '18 年前，一场雪崩，他们三人中有两人没能活着回来',
+                '几个简单实用的下厨小技巧，下次做菜没那么难了',
+                '发工资不打银行卡直接付现金，老板你就是想逃税',
+                '你的痛苦，究竟是谁的错？因为我刚好遇见你','有没有病毒可能对人体「有益」？',
+                '刚刚我想……干什么来着？你有过这种「断片」时刻吗？',
+                '这是名著啊，但我怎么看出了自编自导自演小黄片的感觉']
+
+
+
+
+
+
+            var arrAll = [];
+
+            for (let i = 0; i<imgArr.length;i++){
+
+
+                    arrAll.push( <div className="pic">
+                                <img src={imgArr[i]}/>
+                                <p>{arr_text[i]}</p>
+                            </div>
+                    )
+
+
+            }
+
+
+            return(
+                    <div className="content">
+
+                        <div className="content-title">
+                            <div>浏览内容</div>
+                            <div>最新内容</div>
+                        </div>
+                        <div className="content-body">
+                            {arrAll}
+
+                        </div>
+                        <div className="content-foot">
+                            更多精彩内容可在知乎日报中查看
+                        </div>
+
+                    </div>
+
+
+
+
+
+            )
+        }
+    }
+
+
+    class Foot extends React.Component
+    {
+        render()
+        {
+            return(
+                    <div className="Foot-under">
+                        <div className="ERm">
+                        </div>
+
+                        <p>知乎日报是一款拥有千万用户的资讯类客户端，每日提供来自知乎社区的精选问答，还有国内一流媒体的专栏特稿。</p>
+                        <br/>
+                        <p>主题日报包括动漫、设计、大公司、游戏、财经、电影、电子音乐、互联网安全等丰富内容，为业内人和资深爱好<br/>
+                            者推荐各领域最精彩文章，满足高质量阅读需求。</p>
+                        <br/>
+                        <p>在知乎日报，告别浮躁，重获阅读的愉悦。</p>
+                        <br/>
+                        <p>© 2017 知乎</p>
+
+                    </div>
+
+            )
+        }
+    }
+
+
+
+
+
+
+
+
+
+    class MyApp extends React.Component
+    {
+        render()
+        {
+            return(
+                    <div>
+                        <Nav/>
+                        <Gif/>
+                        <NB/>
+                        <Foot/>
+                    </div>
+            )
+        }
+    }
+    ReactDOM.render(
+                <MyApp/>,
+            document.getElementById('nav')
+    )
+
+    </script>
+
+</body>
+</html>
