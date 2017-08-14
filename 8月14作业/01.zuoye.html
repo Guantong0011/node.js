@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/react/dist/react.js"></script>
+    <script src="node_modules/react-dom/dist/react-dom.js"></script>
+    <script src="node_modules/babel-standalone/babel.js"></script>
+    <style type="text/css">
+        #root {
+            width: 440px;
+            height: 710px;
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .Header {
+            width: 410px;
+            height: 40px;
+            background-color: #3F96B1;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .Header-one img {
+            float: right;
+            display: block;
+            margin-top: 2px;
+        }
+
+        .Header-one img:nth-child(1) {
+            margin-right: 10px;
+        }
+
+        .Header-one a:nth-child(1) {
+            margin-right: 10px;
+        }
+
+        .ArrImg {
+            width: 200px;
+            height: 200px;
+            float: left;
+            margin-top: 5px;
+
+
+        }
+        .ArrImg div:nth-of-type(odd)
+        {
+            margin-right: 5px;
+        }
+
+        .ArrImg2 {
+            width: 400px;
+            height: 100px;
+            overflow: hidden;
+            border-bottom: 1px solid gray;
+            margin-top: 5px;
+            padding-bottom: 4px;
+        }
+
+        .ImgS {
+            width: 410px;
+            height: 610px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .ImgS2 {
+            width: 410px;
+            height: 710px;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .ImgS img {
+            width: 210px;
+            height: 200px;
+        }
+
+        .ImgS2 img {
+            width: 110px;
+            height: 100px;
+            float: left;
+        }
+        .span1 {
+            float: left;
+            width: 130px;
+            height: 100px;
+        }
+        .spanA{
+            font-size: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="root">
+
+</div>
+<script type="text/babel">
+
+
+    //头部
+    class NB extends React.Component {
+        render() {
+            return (
+                    <div className="Header">
+
+
+                        <div className="Header-one">
+
+                            <a href="#" className="aT" onClick={this.props.click}><img src="list.png" height="34" width="34"/></a>
+
+                            <a href="#" className="aT" onClick={this.props.click}><img src="grade.png" height="34" width="34"/></a>
+
+
+                        </div>
+                    </div>
+
+            )
+        }
+    }
+    //第一个按钮
+    class NBN extends React.Component {
+        render() {
+
+            var imgArrBig = ['https://tutorialzine.com/media/2016/03/css-variables.jpg',
+                'https://tutorialzine.com/media/2016/02/great-looking-pricing-tables.jpg'
+                , 'https://tutorialzine.com/media/2016/02/interesting-resources-february.jpg',
+                'https://tutorialzine.com/media/2016/02/quick-tip-responsive-headers.png'
+                , 'https://tutorialzine.com/media/2016/01/learn-sql-20-minutes.png',
+                'https://tutorialzine.com/media/2015/12/creating-your-first-desktop-app-with-electron.png'];
+
+
+
+
+
+            var aImg = ["http://tutorialzine.com/2016/03/what-you-need-to-know-about-css-variables/",
+                "http://tutorialzine.com/2016/02/freebie-4-great-looking-pricing-tables/",
+                "http://tutorialzine.com/2016/02/20-interesting-javascript-and-css-libraries-for-february-2016/",
+                "http://tutorialzine.com/2016/02/quick-tip-easiest-way-to-make-responsive-headers/",
+                "http://tutorialzine.com/2016/01/learn-sql-in-20-minutes/",
+                "http://tutorialzine.com/2015/12/creating-your-first-desktop-app-with-html-js-and-electron/"]
+
+            var arr = [];
+            for (var i = 0; i < imgArrBig.length; i++) {
+                arr.push(
+                        <div className="ArrImg">
+                          <a href={aImg[i]}><img src={imgArrBig[i]}/></a>
+                        </div>
+                )
+            }
+
+
+            return (
+                    <div className="ImgS">
+                        {arr}
+
+                    </div>
+            )
+        }
+    }
+    //第二个按钮
+    class NBs extends React.Component {
+        render() {
+
+            var imgArrBig2 = ['https://tutorialzine.com/media/2016/03/css-variables.jpg',
+                'https://tutorialzine.com/media/2016/02/great-looking-pricing-tables.jpg'
+                , 'https://tutorialzine.com/media/2016/02/interesting-resources-february.jpg',
+                'https://tutorialzine.com/media/2016/02/quick-tip-responsive-headers.png'
+                , 'https://tutorialzine.com/media/2016/01/learn-sql-20-minutes.png',
+                'https://tutorialzine.com/media/2015/12/creating-your-first-desktop-app-with-electron.png'];
+
+
+            var TitleArr = [
+                "What You Need To Know About CSS Variables",
+                "Freebie: 4 Great Looking Pricing Tables",
+                "20 Interesting JavaScript and CSS Libraries for February 2016",
+                "Quick Tip: The Easiest Way To Make Responsive Headers",
+                "Learn SQL In 20 Minutes",
+                "Creating Your First Desktop App With HTML, JS and Electron",
+            ]
+
+            var aImg1 = ["http://tutorialzine.com/2016/03/what-you-need-to-know-about-css-variables/",
+                "http://tutorialzine.com/2016/02/freebie-4-great-looking-pricing-tables/",
+                "http://tutorialzine.com/2016/02/20-interesting-javascript-and-css-libraries-for-february-2016/",
+                "http://tutorialzine.com/2016/02/quick-tip-easiest-way-to-make-responsive-headers/",
+                "http://tutorialzine.com/2016/01/learn-sql-in-20-minutes/",
+                "http://tutorialzine.com/2015/12/creating-your-first-desktop-app-with-html-js-and-electron/"]
+
+            var arr2 = [];
+            for (var i = 0; i < imgArrBig2.length; i++) {
+                arr2.push(
+                        <div className="ArrImg2">
+                          <a href={aImg1[i]} className="span1"><img src={imgArrBig2[i]}/></a>
+                          <span className="spanA">{TitleArr[i]}</span>
+                        </div>
+                )
+            }
+
+
+            return (
+                    <div className="ImgS2">
+                        {arr2}
+
+                    </div>
+            )
+        }
+    }
+
+
+
+
+
+
+
+    //判断
+
+    class PD extends React.Component{
+        constructor(props){
+            super(props);
+            this.state={
+                changePage:false
+            }
+        }
+
+        oneClick=()=>{
+            this.setState({
+                changePage:!this.state.changePage
+            })
+        };
+
+
+
+        render(){
+            const state= this.state.changePage;
+
+            if(state){
+                return(
+                        <div>
+                            <NB click ={this.oneClick}/>
+                            <NBs/>
+                        </div>
+                )
+            }
+            else {
+                return(
+                        <div>
+                            <NB click ={this.oneClick}/>
+                            <NBN/>
+                        </div>
+
+                )
+            }
+
+
+
+        }
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+//    class Myapp1 extends React.Component{
+//        render()
+//        {
+//            return(
+//                    <div>
+//                        <NB/>
+//                        <NBs/>
+//
+//                    </div>
+//
+//
+//            )
+//        }
+//    }
+
+
+//    class Myapp extends React.Component {
+//        render() {
+//            return (
+//                    <div>
+//                        <NB/>
+//                        <NBN/>
+//                    </div>
+//            )
+//        }
+//    }
+
+
+
+
+
+
+    ReactDOM.render(
+            <PD/>,
+            document.getElementById('root')
+    )
+</script>
+</body>
+</html>
